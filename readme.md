@@ -38,11 +38,9 @@ TimeCommander MyTimeCommander;
 void setup() {
   ...
   
-  // optional set the timers values to zero
-  // or to a high value if we want to start them disabled or closer to execution
-  MyTimeCommander.set(AUTO_OFF_TIMER, 91);  // auto off not running
-  MyTimeCommander.set(REPORT_TIMER, 0);     // start in zero
-  
+  // optional set the timers values to zero or halt
+  MyTimeCommander.off(AUTO_OFF_TIMER);     // sets the timer to a halt, will not trigger anything
+  MyTimeCommander.set(REPORT_TIMER, 5);    // start closer to the trigger point  
   ...
 }
 
@@ -51,20 +49,20 @@ void loop() {
   if(MyTimeCommander.loopTo(REPORT_TIMER, 120)) {
     // do something each 120 seconds
   }
-
-  // as an example, turn ON something that should auto-off later
-  if (digitalRead(BUTTON_PIN)) {
-    // turn on a relay or something.
-    
-    // reset the AUTO_OFF_TIMER to 0
-    MyTimeCommander.set(AUTO_OFF_TIMER, 0);
-  }
   
   // turn off the relay after 90 seconds of being ON
-  if(MyTimeTracker.countTo(AUTO_OFF_TIMER, 90)) {
+  if(MyTimeCommander.countTo(AUTO_OFF_TIMER, 90)) {
 
     // turn off the relay, this will be executed only once
 
+  }
+
+  // as an example, turn ON something that should auto-off later
+  if (digitalRead(BUTTON_PIN)) {
+    // turn on a relay or do something.
+    
+    // reset the AUTO_OFF_TIMER so it will be triggered when it reaches the desired value
+    MyTimeCommander.reset(AUTO_OFF_TIMER);
   }
   
 }
