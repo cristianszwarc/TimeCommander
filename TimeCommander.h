@@ -10,6 +10,8 @@
 #define TIME_FUNCTIONS_MAX_LENGTH 5
 #endif
 
+#include <Arduino.h>
+
 class TimeCommander
 {
 private:

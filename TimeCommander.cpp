@@ -50,7 +50,6 @@ void TimeCommander::keepTime()
 
   // increment each timer 1 second N times
   while(timeDiff>=1000) {
-    Serial.println();
     // increment each timer one second (be aware, they need to be consumed to not rollover)
     while(n<timersLength) {
       // timers roll over at 65534, because 65535 is a reached flag
@@ -60,7 +59,6 @@ void TimeCommander::keepTime()
       } else if (timers[n] == 65534) {
         timers[n] = 0;
       }
-      Serial.println(timers[n]);
       n++;
     }
     timeDiff = timeDiff - 1000;
