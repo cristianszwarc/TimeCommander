@@ -1,0 +1,12 @@
+{
+  "name": "TimeCommander",
+  "keywords": "time, track, count, loop",
+  "description": "Functions to schedule triggers.",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/cristianszwarc/TimeCommander.git"
+  },
+  "frameworks": "arduino",
+  "platforms": "atmelavr"
+}

@@ -1,0 +1,5 @@
+TimeCommander KEYWORD1
+time           KEYWORD2
+track            KEYWORD2
+count          KEYWORD2
+loop       KEYWORD2
