@@ -25,8 +25,8 @@ lib_deps =
 **Basic use**
 ```cpp
 ..
-// define how many timers we want to track (default def is 5)
-#define TIME_FUNCTIONS_MAX_LENGTH 2
+// to define how many timers we want to track (default def is 5) change the line
+// TIME_FUNCTIONS_MAX_LENGTH in TimeCommander.h
 #include <TimeCommander.h>
 
 TimeCommander MyTimeCommander;

@@ -6,9 +6,7 @@
 #ifndef TIME_FUNCTIONS
 #define TIME_FUNCTIONS
 
-#ifndef TIME_FUNCTIONS_MAX_LENGTH
 #define TIME_FUNCTIONS_MAX_LENGTH 5
-#endif
 
 #include <Arduino.h>
 
